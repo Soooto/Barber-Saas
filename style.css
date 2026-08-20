@@ -1,0 +1,429 @@
+/* RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* BODY */
+
+body {
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #ffffff 0%,
+            #f5f5f7 55%,
+            #ececee 100%
+        );
+
+    color: #1d1d1f;
+
+    min-height: 100vh;
+}
+
+
+/* PÁGINA */
+
+.page {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 24px;
+}
+
+
+/* CONTAINER GERAL */
+
+.booking-container {
+    width: 100%;
+    max-width: 430px;
+}
+
+
+/* BARRA DE PROGRESSO */
+
+.progress {
+    width: 100%;
+
+    display: flex;
+    align-items: flex-start;
+
+    margin-bottom: 28px;
+
+    padding: 0 8px;
+}
+
+
+/* ETAPAS */
+
+.progress-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 7px;
+
+    color: #a1a1a6;
+
+    min-width: 50px;
+
+    transition: color 0.3s ease;
+}
+
+
+/* CÍRCULOS */
+
+.circle {
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #e8e8ed;
+
+    color: #86868b;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+/* TEXTO DAS ETAPAS */
+
+.progress-step span {
+    font-size: 11px;
+    font-weight: 500;
+
+    white-space: nowrap;
+}
+
+
+/* LINHAS ENTRE AS ETAPAS */
+
+.line {
+    flex: 1;
+
+    height: 2px;
+
+    background: #e8e8ed;
+
+    margin-top: 14px;
+
+    transition: background 0.3s ease;
+}
+
+
+/* ETAPA ATUAL */
+
+.progress-step.active {
+    color: #1d1d1f;
+}
+
+.progress-step.active .circle {
+    background: #1d1d1f;
+    color: white;
+
+    transform: scale(1.05);
+}
+
+
+/* ETAPA CONCLUÍDA */
+
+.progress-step.completed {
+    color: #1d1d1f;
+}
+
+.progress-step.completed .circle {
+    background: #1d1d1f;
+    color: white;
+}
+
+
+/* CARD */
+
+.booking-card {
+    width: 100%;
+
+    background: rgba(255, 255, 255, 0.78);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    border-radius: 28px;
+
+    padding: 44px 38px;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.07);
+}
+
+
+/* MARCA */
+
+.brand {
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    color: #6e6e73;
+
+    margin-bottom: 32px;
+}
+
+
+/* CABEÇALHO */
+
+.heading {
+    margin-bottom: 36px;
+}
+
+.heading h1 {
+    font-size: 36px;
+
+    line-height: 1.08;
+
+    letter-spacing: -1.3px;
+
+    font-weight: 650;
+
+    margin-bottom: 12px;
+}
+
+.heading p {
+    color: #6e6e73;
+
+    font-size: 17px;
+
+    line-height: 1.5;
+}
+
+
+/* FORMULÁRIO */
+
+form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 22px;
+}
+
+
+/* CAMPOS */
+
+.field {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+/* LABEL */
+
+.field label {
+    font-size: 14px;
+
+    font-weight: 600;
+
+    color: #3a3a3c;
+}
+
+
+/* INPUT */
+
+.field input {
+    width: 100%;
+
+    height: 56px;
+
+    border: 1px solid #d2d2d7;
+
+    border-radius: 14px;
+
+    background: rgba(255, 255, 255, 0.8);
+
+    padding: 0 17px;
+
+    font-size: 16px;
+
+    color: #1d1d1f;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+/* PLACEHOLDER */
+
+.field input::placeholder {
+    color: #a1a1a6;
+}
+
+
+/* INPUT EM FOCO */
+
+.field input:focus {
+    border-color: #0071e3;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 0 0 4px rgba(0, 113, 227, 0.12);
+}
+
+
+/* INPUT COM ERRO */
+
+.field input.error {
+    border-color: #d70015;
+
+    box-shadow:
+        0 0 0 4px rgba(215, 0, 21, 0.10);
+}
+
+
+/* MENSAGEM DE ERRO */
+
+.error-message {
+    min-height: 15px;
+
+    color: #d70015;
+
+    font-size: 12px;
+
+    line-height: 1.3;
+
+    margin-left: 2px;
+}
+
+/* BOTÃO */
+
+button {
+    width: 100%;
+    height: 56px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background: #1d1d1f;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    margin-top: 6px;
+
+    transition:
+        transform 0.15s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+button:hover {
+    background: #000000;
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+    transform: scale(0.985);
+}
+
+
+/* PRIVACIDADE */
+
+.privacy {
+    margin-top: 26px;
+
+    text-align: center;
+
+    color: #86868b;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 500px) {
+
+    .page {
+        align-items: flex-start;
+
+        padding: 18px;
+
+        padding-top: 40px;
+    }
+
+    .booking-card {
+        padding: 32px 24px;
+
+        border-radius: 24px;
+    }
+
+    .heading h1 {
+        font-size: 32px;
+    }
+
+    .progress {
+        padding: 0;
+    }
+
+    .progress-step {
+        min-width: 42px;
+    }
+
+    .progress-step span {
+        font-size: 10px;
+    }
+
+    .circle {
+        width: 28px;
+        height: 28px;
+    }
+
+    .line {
+        margin-top: 13px;
+    }
+}

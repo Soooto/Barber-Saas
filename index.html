@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Agendamento</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <main class="page">
+
+        <div class="booking-container">
+
+            <!-- Barra de progresso -->
+            <div class="progress">
+
+                <div class="progress-step active">
+                    <div class="circle">1</div>
+                    <span>Dados</span>
+                </div>
+
+                <div class="line"></div>
+
+                <div class="progress-step">
+                    <div class="circle">2</div>
+                    <span>Serviço</span>
+                </div>
+
+                <div class="line"></div>
+
+                <div class="progress-step">
+                    <div class="circle">3</div>
+                    <span>Barbeiro</span>
+                </div>
+
+                <div class="line"></div>
+
+                <div class="progress-step">
+                    <div class="circle">4</div>
+                    <span>Horário</span>
+                </div>
+
+            </div>
+
+            <!-- Card -->
+            <section class="booking-card">
+
+                <div class="brand">
+                    BARBER
+                </div>
+
+                <div class="heading">
+                    <h1>Agende seu horário.</h1>
+
+                    <p>
+                        Informe seus dados para continuar.
+                    </p>
+                </div>
+
+                <form id="clienteForm" novalidate>
+
+                    <!-- Nome -->
+                    <div class="field">
+
+                        <label for="nome">
+                            Nome
+                        </label>
+
+                        <input
+                            type="text"
+                            id="nome"
+                            name="nome"
+                            placeholder="Seu nome"
+                            autocomplete="name"
+                            maxlength="100"
+                        >
+
+                        <span
+                            class="error-message"
+                            id="erroNome"
+                        ></span>
+
+                    </div>
+
+                    <!-- Telefone -->
+                    <div class="field">
+
+                        <label for="telefone">Telefone</label>
+
+                        <input
+                            type="tel"
+                            id="telefone"
+                            name="telefone"
+                            placeholder="(11) 99999-9999"
+                            autocomplete="tel"
+                            maxlength="15"
+                        >
+
+                        <span
+                            class="error-message"
+                            id="erroTelefone"
+                        ></span>
+
+                    </div>
+
+                    <button type="submit">
+                        Continuar
+                    </button>
+
+                </form>
+
+                <p class="privacy">
+                    Seus dados serão utilizados apenas para realizar seu agendamento.
+                </p>
+
+            </section>
+
+        </div>
+
+    </main>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
