@@ -805,7 +805,7 @@ novoAgendamento.addEventListener(
             "active"
         );
 
-        mostrarEtapa(2);
+        mostrarEtapa(1);
     }
 );
 
