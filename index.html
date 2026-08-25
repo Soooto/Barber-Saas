@@ -7,7 +7,7 @@
 
     <title>Agendamento</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -16,7 +16,6 @@
 
         <div class="booking-container">
 
-            <!-- Barra de progresso -->
             <div class="progress">
 
                 <div class="progress-step active">
@@ -47,76 +46,330 @@
 
             </div>
 
-            <!-- Card -->
             <section class="booking-card">
 
-                <div class="brand">
-                    BARBER
-                </div>
+                <!-- ETAPA 1 - DADOS -->
+                <div class="step-content active" id="etapaDados">
 
-                <div class="heading">
-                    <h1>Agende seu horário.</h1>
+                    <div class="brand">
+                        BARBER
+                    </div>
 
-                    <p>
-                        Informe seus dados para continuar.
+                    <div class="heading">
+                        <h1>Agende seu horário.</h1>
+                        <p>Informe seus dados para continuar.</p>
+                    </div>
+
+                    <form id="clienteForm" novalidate>
+
+                        <div class="field">
+
+                            <label for="nome">
+                                Nome
+                            </label>
+
+                            <input
+                                type="text"
+                                id="nome"
+                                name="nome"
+                                placeholder="Seu nome"
+                                autocomplete="name"
+                                maxlength="100"
+                            >
+
+                            <span
+                                class="error-message"
+                                id="erroNome"
+                            ></span>
+
+                        </div>
+
+                        <div class="field">
+
+                            <label for="telefone">
+                                Telefone
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="telefone"
+                                name="telefone"
+                                placeholder="(11) 99999-9999"
+                                autocomplete="tel"
+                                maxlength="15"
+                            >
+
+                            <span
+                                class="error-message"
+                                id="erroTelefone"
+                            ></span>
+
+                        </div>
+
+                        <button type="submit">
+                            Continuar
+                        </button>
+
+                    </form>
+
+                    <p class="privacy">
+                        Seus dados serão utilizados apenas para realizar seu agendamento.
                     </p>
+
                 </div>
 
-                <form id="clienteForm" novalidate>
+                <!-- ETAPA 2 - SERVIÇO -->
+                <div class="step-content" id="etapaServico">
 
-                    <!-- Nome -->
-                    <div class="field">
+                    <div class="brand">
+                        BARBER
+                    </div>
 
-                        <label for="nome">
-                            Nome
+                    <div class="heading">
+                        <h1>Escolha o serviço.</h1>
+                        <p>Selecione o serviço que deseja realizar.</p>
+                    </div>
+
+                    <div class="services">
+
+                        <button
+                            type="button"
+                            class="service-card"
+                            data-servico="Corte"
+                            data-preco="35"
+                        >
+
+                            <div class="service-info">
+                                <strong>Corte</strong>
+                                <span>30 minutos</span>
+                            </div>
+
+                            <strong>R$ 35</strong>
+
+                        </button>
+
+                        <button
+                            type="button"
+                            class="service-card"
+                            data-servico="Barba"
+                            data-preco="25"
+                        >
+
+                            <div class="service-info">
+                                <strong>Barba</strong>
+                                <span>20 minutos</span>
+                            </div>
+
+                            <strong>R$ 25</strong>
+
+                        </button>
+
+                        <button
+                            type="button"
+                            class="service-card"
+                            data-servico="Corte + Barba"
+                            data-preco="50"
+                        >
+
+                            <div class="service-info">
+                                <strong>Corte + Barba</strong>
+                                <span>50 minutos</span>
+                            </div>
+
+                            <strong>R$ 50</strong>
+
+                        </button>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="secondary-button"
+                        id="voltarDados"
+                    >
+                        Voltar
+                    </button>
+
+                </div>
+
+                <!-- ETAPA 3 - BARBEIRO -->
+                <div class="step-content" id="etapaBarbeiro">
+
+                    <div class="brand">
+                        BARBER
+                    </div>
+
+                    <div class="heading">
+                        <h1>Escolha o barbeiro.</h1>
+                        <p>Selecione o profissional desejado.</p>
+                    </div>
+
+                    <div class="services">
+
+                        <button
+                            type="button"
+                            class="service-card barbeiro-card"
+                            data-barbeiro="João"
+                        >
+
+                            <div class="service-info">
+                                <strong>João</strong>
+                                <span>Barbeiro</span>
+                            </div>
+
+                        </button>
+
+                        <button
+                            type="button"
+                            class="service-card barbeiro-card"
+                            data-barbeiro="Carlos"
+                        >
+
+                            <div class="service-info">
+                                <strong>Carlos</strong>
+                                <span>Barbeiro</span>
+                            </div>
+
+                        </button>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="secondary-button"
+                        id="voltarServico"
+                    >
+                        Voltar
+                    </button>
+
+                </div>
+
+                <!-- ETAPA 4 - DATA E HORÁRIO -->
+                <div class="step-content" id="etapaHorario">
+
+                    <div class="brand">
+                        BARBER
+                    </div>
+
+                    <div class="heading">
+                        <h1>Escolha o horário.</h1>
+
+                        <p>
+                            Escolha uma data dentro dos próximos 30 dias e depois um horário disponível.
+                        </p>
+                    </div>
+
+                    <div class="field date-field">
+
+                        <label for="dataAgendamento">
+                            Data
                         </label>
 
                         <input
-                            type="text"
-                            id="nome"
-                            name="nome"
-                            placeholder="Seu nome"
-                            autocomplete="name"
-                            maxlength="100"
+                            type="date"
+                            id="dataAgendamento"
                         >
 
                         <span
                             class="error-message"
-                            id="erroNome"
+                            id="erroData"
                         ></span>
 
                     </div>
 
-                    <!-- Telefone -->
-                    <div class="field">
+                    <div
+                        class="horario-section"
+                        id="horarioSection"
+                    >
 
-                        <label for="telefone">Telefone</label>
+                        <p class="section-label">
+                            Horários disponíveis
+                        </p>
 
-                        <input
-                            type="tel"
-                            id="telefone"
-                            name="telefone"
-                            placeholder="(11) 99999-9999"
-                            autocomplete="tel"
-                            maxlength="15"
-                        >
-
-                        <span
-                            class="error-message"
-                            id="erroTelefone"
-                        ></span>
+                        <div
+                            class="horarios"
+                            id="listaHorarios"
+                        ></div>
 
                     </div>
 
-                    <button type="submit">
-                        Continuar
+                    <button
+                        type="button"
+                        class="secondary-button"
+                        id="voltarBarbeiro"
+                    >
+                        Voltar
                     </button>
 
-                </form>
+                </div>
 
-                <p class="privacy">
-                    Seus dados serão utilizados apenas para realizar seu agendamento.
-                </p>
+                <!-- CONFIRMAÇÃO -->
+                <div class="step-content" id="etapaConfirmacao">
+
+                    <div class="brand">
+                        BARBER
+                    </div>
+
+                    <div class="heading">
+                        <h1>Agendamento confirmado.</h1>
+                        <p>Confira os dados do seu agendamento.</p>
+                    </div>
+
+                    <div class="summary">
+
+                        <div class="summary-item">
+                            <span>Cliente</span>
+                            <strong id="resumoNome"></strong>
+                        </div>
+
+                        <div class="summary-item">
+                            <span>Telefone</span>
+                            <strong id="resumoTelefone"></strong>
+                        </div>
+
+                        <div class="summary-item">
+                            <span>Serviço</span>
+                            <strong id="resumoServico"></strong>
+                        </div>
+
+                        <div class="summary-item">
+                            <span>Barbeiro</span>
+                            <strong id="resumoBarbeiro"></strong>
+                        </div>
+
+                        <div class="summary-item">
+                            <span>Data</span>
+                            <strong id="resumoData"></strong>
+                        </div>
+
+                        <div class="summary-item">
+                            <span>Horário</span>
+                            <strong id="resumoHorario"></strong>
+                        </div>
+
+                    </div>
+
+                    <div class="confirmation-actions">
+
+                        <button
+                            type="button"
+                            class="danger-button"
+                            id="cancelarAgendamento"
+                        >
+                            Cancelar agendamento
+                        </button>
+
+                        <button
+                            type="button"
+                            class="primary-button"
+                            id="novoAgendamento"
+                        >
+                            Novo agendamento
+                        </button>
+
+                    </div>
+
+                </div>
 
             </section>
 
@@ -124,7 +377,7 @@
 
     </main>
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 
 </body>
 
